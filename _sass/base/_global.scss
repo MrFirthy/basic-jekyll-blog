@@ -1,0 +1,78 @@
+html,
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+body {
+    padding: 10rem 0 0;
+    margin: 0;
+    font-size: 1rem;
+    color: $text;
+    text-align: center;
+    background: $background;
+    transition: all .5s ease-in-out;
+
+    @media (min-width: $phone) {
+        padding: 0;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    padding-bottom: 0.5rem;
+    padding-left: 1.6rem;
+
+    @media (min-width: $phone) {
+        padding-left: 4rem;
+    }
+
+    li {
+        padding: 0.4rem 0;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 3rem;
+    }
+}
+
+ol {
+    li {
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+}
+
+.content {
+    padding: 0 1.6rem;
+    margin: 0 auto;
+    text-align: left;
+
+    @media (min-width: $container) {
+        width: $container;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+ * Skip to main content link
+ * -------------------------------------------------------------------------- */
+
+.skip-to-content {
+    position: absolute;
+    top: -10rem;
+    left: 1em;
+    z-index: 1000;
+    padding: 0.2rem 0.8rem;
+
+    &:focus {
+        position: absolute;
+        top: 1.3rem;
+        color: white;
+        text-decoration: none;
+        background: $link;
+        outline-color: lighten($link, 15%);
+    }
+}

@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<div class="content">
+    <header>
+        {% include nav.html %}
+        {% include title.html %}
+    </header>
+
+    <main id="main-content">
+        <div class="hero">
+            <h2 class="h1">{{ page.title }}</h2>
+        </div>
+
+        {{ content }}
+    </main>
+</div>

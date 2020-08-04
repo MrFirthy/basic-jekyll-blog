@@ -1,0 +1,32 @@
+---
+layout: page
+title: Blog
+---
+
+{% include tags.html %}
+
+<section class="posts">
+    {% for post in paginator.posts %}
+        {% include post-overview.html %}
+    {% endfor %}
+</section>
+
+{% if paginator.total_posts > paginator.per_page %}
+    <div class="pagination">
+        <p>
+            {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path }}" class="previous">
+                    Previous
+                </a>
+            {% endif %}
+                <span class="page_number ">
+                    Page <strong>{{ paginator.page }}</strong> of {{ paginator.total_pages }}
+                </span>
+            {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+            {% endif %}
+        </p>
+    </div>
+{% endif %}
+
+<p class="rss"><a href="{{ site.url }}/feed.xml">Subscribe via RSS</a></p>

@@ -1,0 +1,16 @@
+name: My first blog
+title: The name of your blog
+description: A description for your blog.
+github: [metadata]
+markdown: kramdown
+google_analytics: UA-XXXXXXXXX-1
+assets:
+  autoprefixer:
+    browsers:
+    - "last 2 versions"
+    - "IE > 9"
+plugins:
+  - jekyll-paginate
+paginate: 5
+paginate_path: "/blog/page/:num/"
+future: true

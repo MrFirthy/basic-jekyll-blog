@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<div class="content" id="main-content">
+    <a
+        href="{{ site.url }}/blog"
+        class="back-link"
+        aria-hidden="true"
+    >
+        &times;
+        <span class="sr-only">Back to blog</span>
+    </a>
+
+    <main class="post post__content">
+        <h1>{{ page.title }}</h1>
+        <p class="post__reading-time">
+            {{ page.date | date: "%B %-d, %Y" }}{% if page.meta %} • {{ page.meta }}{% endif %} / Reading time: <strong>{{ page.readingtime }}</strong>
+            {% if page.tags %}
+                <span class="tags">
+                    {% for tag in page.tags %}
+                        {% capture tag_name %}{{ tag }}{% endcapture %}
+                        <a
+                            href="{{ site.url }}/blog/{{ tag_name }}"
+                            class="tag"
+                        >
+                            {{ tag_name }}
+                        </a>
+                    {% endfor %}
+                </span>
+            {% endif %}
+        </p>
+
+        <article class="post-content">
+            {{ content }}
+        </article>
+    </main>
+
+    <footer>
+        {% include title.html tag="h2" %}
+        {% include nav.html align="left" %}
+    </footer>
+</div>
